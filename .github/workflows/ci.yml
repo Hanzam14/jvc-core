@@ -1,0 +1,86 @@
+name: JVC CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test on ${{ matrix.os }} (Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package and development dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install .[dev]
+
+      - name: Run unit tests
+        run: |
+          pytest tests/unit -v
+
+      - name: Run integration tests
+        run: |
+          pytest tests/integration -v
+
+      - name: Run security tests
+        run: |
+          pytest tests/security -v
+
+      - name: Run synthetic demo
+        run: |
+          jvc demo
+
+  package:
+    name: Build & Package Audit
+    runs-on: windows-latest
+    needs: test
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip build wheel
+
+      - name: Build sdist and wheel
+        run: |
+          python -m build
+
+      - name: Verify package archives
+        run: |
+          Get-ChildItem -Path dist\
+          python -m zipfile -l (Get-Item dist\*.whl).FullName
+
+      - name: Isolated-install acceptance
+        run: |
+          python scripts/release_acceptance.py
+
+      - name: Run acceptance tests
+        run: |
+          python -m pip install .[dev]
+          pytest tests/acceptance -v

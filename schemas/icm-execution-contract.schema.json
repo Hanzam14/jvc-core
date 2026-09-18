@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.jvc/icm-execution-contract.schema.json",
+  "title": "ICM day-one execution contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id",
+    "cwd",
+    "persistence",
+    "privacy",
+    "permission_class",
+    "runtime",
+    "preflight",
+    "verify",
+    "write_policy"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "project_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "cwd": { "type": "string", "minLength": 1 },
+    "persistence": { "enum": ["git", "onedrive", "local"] },
+    "privacy": { "enum": ["standard", "private-content", "restricted-tooling"] },
+    "permission_class": { "enum": ["read-test", "private-structure-only", "docs-only"] },
+    "runtime": {
+      "type": "object",
+      "required": ["kind", "candidates", "probe_argv"],
+      "properties": {
+        "kind": { "enum": ["python", "none"] },
+        "candidates": {
+          "type": "array",
+          "items": { "type": "array", "items": { "type": "string" } }
+        },
+        "probe_argv": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "preflight": { "$ref": "#/$defs/check" },
+    "verify": { "$ref": "#/$defs/check" },
+    "write_policy": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "check": {
+      "type": ["object", "null"],
+      "required": ["argv", "timeout_seconds", "expected_exit", "expected_contains"],
+      "properties": {
+        "argv": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "timeout_seconds": { "type": "integer", "minimum": 1 },
+        "expected_exit": { "const": 0 },
+        "expected_contains": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

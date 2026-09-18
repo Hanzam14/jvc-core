@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.jvc/trusted-executables.schema.json",
+  "title": "JVC Trusted Executables Schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "executables"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "executables": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["class", "path", "sha256"],
+        "properties": {
+          "class": { "type": "string" },
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9A-Fa-f]{64}$" },
+          "trusted_installation_root": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

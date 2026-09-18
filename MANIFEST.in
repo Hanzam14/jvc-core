@@ -1,0 +1,29 @@
+# Explicit sdist inclusion policy for the JVC 0.1.0 candidate.
+#
+# The wheel is built from `src/jvc` via pyproject setuptools config. This
+# file declares exactly what else ships in the sdist:
+#   INCLUDE: top-level docs, docs/, schemas/, examples/
+#   EXCLUDE: tests/, scripts/, CI workflows (developer/verification material
+#            that lives in the git checkout and CI, not in the artifact),
+#            build residue, caches, the deferred server module (enforced by
+#            name here AND asserted absent by archive audits).
+
+include README.md SECURITY.md ARCHITECTURE.md CHANGELOG.md CONTRIBUTING.md AGENTS.md pyproject.toml MANIFEST.in
+
+graft docs
+graft schemas
+graft examples
+
+prune .github
+prune tests
+prune scripts
+
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude __pycache__
+global-exclude .pytest_cache
+
+# The deferred HTTP server must never ship in 0.1.0 artifacts, even if the
+# module file ever reappears in the source tree.
+exclude src/jvc/execution/server.py
+global-exclude server.py

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.jvc/governance-policy.schema.json",
+  "title": "JVC Governance Policy Schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "policy_id",
+    "fail_closed",
+    "mutation"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "policy_id": { "type": "string" },
+    "route_authority": { "type": "string" },
+    "fail_closed": { "type": "boolean" },
+    "model_facing": {
+      "type": "object",
+      "properties": {
+        "raw_shell": { "type": "boolean" },
+        "generic_command": { "type": "boolean" },
+        "operator_authorization": { "type": "boolean" },
+        "caller_authority_upgrade_fields": { "type": "boolean" }
+      }
+    },
+    "mutation": {
+      "type": "object",
+      "properties": {
+        "registered_routes_only": { "type": "boolean" },
+        "canonical_containment_required": { "type": "boolean" },
+        "mandatory_secret_deny": { "type": "boolean" },
+        "cas_required_for_overwrite": { "type": "boolean" },
+        "recovery_after_authorization_only": { "type": "boolean" },
+        "git_stage_exact_files_only": { "type": "boolean" }
+      }
+    },
+    "secret_classes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "protected_surfaces": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
