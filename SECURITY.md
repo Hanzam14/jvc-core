@@ -2,7 +2,7 @@
 
 ## Reporting Security Issues
 
-Maintainer: **hanzam14**. The selected channel is GitHub private vulnerability reporting on the final repository. That repository and reporting route are not yet established or verified. Before release, enable private vulnerability reporting, verify that the Security tab offers a private reporting route to outside reporters, and record its exact URL here. Publication is blocked until that route is usable. Do not open a public issue for a suspected boundary bypass.
+Maintainer: **hanzam14**. Report security issues privately via GitHub private vulnerability reporting: <https://github.com/Hanzam14/jvc-core/security/advisories/new>. Do not open a public issue for a suspected boundary bypass.
 
 ---
 

@@ -1,6 +1,6 @@
 # JVC (Judicial Verification Core)
 
-> **Status:** pre-release candidate (0.1.0). Apache-2.0 selected; external clean-machine validation, a verified security-reporting channel, and publication approval remain outstanding.
+> **Status:** 0.1.0 — public repository <https://github.com/Hanzam14/jvc-core> (Apache-2.0). Security reports via private vulnerability reporting (see [Security Policy](SECURITY.md)).
 
 **JVC** is a local policy-controlled routing and execution layer for agent workflows operating across multiple projects.
 

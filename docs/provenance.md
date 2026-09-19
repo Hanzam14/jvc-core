@@ -82,6 +82,6 @@ All files under `tests/` are class `tests`: synthetic verification material auth
 
 1. Apache-2.0 was selected under maintainer delegation on 2026-09-20; `LICENSE` contains the official text from https://www.apache.org/licenses/LICENSE-2.0.txt. The ownership/permission attestation is recorded below.
 2. On 2026-09-20, hanzam14 explicitly confirmed ownership of the inventoried JVC code/docs or permission to release them under Apache-2.0. This maintainer attestation is not independent proof of title or a legal opinion.
-3. Public repository URL, maintainer contact, and security reporting channel are pending release setup; no placeholders are claimed anywhere in this candidate.
+3. Public repository: <https://github.com/Hanzam14/jvc-core>. Maintainer contact and security reporting channel: SECURITY.md (GitHub private vulnerability reporting). No placeholders are claimed anywhere in this candidate.
 4. The commit author identity used for local history is recorded in the release report; no invented maintainer domain is used.
 5. No file above has a known third-party upstream requiring attribution; if review surfaces one, it will be listed here before publication.
