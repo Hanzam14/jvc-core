@@ -1,6 +1,6 @@
 # JVC (Judicial Verification Core)
 
-> **Status:** pre-release candidate (0.1.0). No public repository, license selection, or security reporting channel has been established yet.
+> **Status:** pre-release candidate (0.1.0). Apache-2.0 selected; external clean-machine validation, a verified security-reporting channel, and publication approval remain outstanding.
 
 **JVC** is a local policy-controlled routing and execution layer for agent workflows operating across multiple projects.
 
@@ -124,3 +124,7 @@ For full security policy and threat model documentation, see [SECURITY.md](SECUR
 - [Recovery & Rollback Subsystem](docs/recovery.md)
 - [Releasing & Packaging](docs/releasing.md)
 - [Licensing Review](docs/licensing-review.md)
+
+## License and maintainer
+
+Maintained by **hanzam14**. Licensed under the [Apache License 2.0](LICENSE). The maintainer attested ownership or permission to release the inventoried material on 2026-09-20; see [provenance](docs/provenance.md).

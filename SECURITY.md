@@ -2,7 +2,7 @@
 
 ## Reporting Security Issues
 
-The public repository and its dedicated security reporting channel are not yet established. Until a dedicated security reporting address is published, open a GitHub Security Advisory after the public repository is created. Do not open a public issue for a suspected boundary bypass.
+Maintainer: **hanzam14**. The selected channel is GitHub private vulnerability reporting on the final repository. That repository and reporting route are not yet established or verified. Before release, enable private vulnerability reporting, verify that the Security tab offers a private reporting route to outside reporters, and record its exact URL here. Publication is blocked until that route is usable. Do not open a public issue for a suspected boundary bypass.
 
 ---
 

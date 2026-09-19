@@ -8,7 +8,7 @@
 #            build residue, caches, the deferred server module (enforced by
 #            name here AND asserted absent by archive audits).
 
-include README.md SECURITY.md ARCHITECTURE.md CHANGELOG.md CONTRIBUTING.md AGENTS.md pyproject.toml MANIFEST.in
+include LICENSE README.md SECURITY.md ARCHITECTURE.md CHANGELOG.md CONTRIBUTING.md AGENTS.md pyproject.toml MANIFEST.in
 
 graft docs
 graft schemas

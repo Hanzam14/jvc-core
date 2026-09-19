@@ -1,9 +1,9 @@
 # Licensing Review & Candidate Comparison
 
 > [!IMPORTANT]
-> The repository maintainer has **not** selected a final open-source license yet.
-> A `LICENSE` file is intentionally omitted pending an explicit human decision after provenance review.
-> This document compares candidates WITHOUT declaring either legally cleared.
+> **Apache-2.0 selected on 2026-09-20**, under the maintainer's explicit delegation to choose and prepare the license.
+> The official Apache License 2.0 text is included in `LICENSE`.
+> Selection does not establish ownership or redistribution rights; the maintainer attested ownership or permission to release the inventoried material on 2026-09-20. This is a maintainer statement, not independent legal clearance.
 > Nothing here is legal advice.
 
 ---
@@ -39,7 +39,7 @@ Per the file-level inventory in `docs/provenance.md`:
 - **Third-Party Code:** No third-party source code is knowingly vendored in this public candidate, subject to the provenance inventory. See `docs/provenance.md` for per-file origin, confidence, and unresolved questions.
 
 ### Constraint Assessment
-No retained material is known to create copyleft or redistribution constraints. Both MIT and Apache-2.0 remain **PLAUSIBLE**; neither is declared "100% viable" or "completely cleared." Final selection remains a human decision after provenance review.
+No retained material is known to create copyleft or redistribution constraints. Both MIT and Apache-2.0 remain **PLAUSIBLE**; neither is declared "100% viable" or "completely cleared." Apache-2.0 is selected for its explicit contributor patent grant; the maintainer's ownership/permission attestation is recorded in the provenance inventory; it is not independent legal clearance.
 
 ---
 

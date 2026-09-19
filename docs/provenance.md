@@ -2,7 +2,7 @@
 
 This manifest inventories every meaningful source/specification file shipped in this candidate: origin class, known upstream source, licensing/attribution status, and the basis for each statement. It supports — but does not replace — human ownership/rights attestation. Nothing here is legal advice or legal clearance.
 
-Working statement: **the candidate was derived/generalized from the maintainer-controlled private JVC implementation during OSS extraction, with further files newly authored in this repository during remediation. No third-party source is knowingly vendored, per the inventory below. Final ownership and rights attestation remain a human responsibility.**
+Working statement: **the candidate was derived/generalized from the maintainer-controlled private JVC implementation during OSS extraction, with further files newly authored in this repository during remediation. No third-party source is knowingly vendored, per the inventory below. On 2026-09-20, maintainer hanzam14 confirmed ownership of the inventoried code/docs or permission to release them under Apache-2.0. This records the maintainer's statement, not independent verification.**
 
 Origin classes:
 - `extracted/generalized` — derived from the maintainer-controlled private JVC during OSS extraction; adapted for standalone public use. Basis: extraction record (single-purpose derivation task, no third-party inputs in scope).
@@ -58,7 +58,7 @@ Third-party source vendored: **none known**. The CI workflow references public G
 | Path | Origin | Upstream | License/attribution | Basis |
 | --- | --- | --- | --- | --- |
 | `README.md`, `ARCHITECTURE.md`, `SECURITY.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `AGENTS.md` | `docs` (extraction + remediation) | none | no attribution obligation known | Methodology wording derived from the maintainer's implementation; behaviors verified by the test suite in this checkout. |
-| `docs/security-model.md`, `docs/capabilities.md`, `docs/recovery.md`, `docs/configuration.md`, `docs/quickstart.md`, `docs/releasing.md`, `docs/licensing-review.md`, `docs/public-api.md` | `docs` (extraction + remediation) | none | no attribution obligation known | Licensing review compares licenses from general knowledge; no license text vendored. |
+| `docs/security-model.md`, `docs/capabilities.md`, `docs/recovery.md`, `docs/configuration.md`, `docs/quickstart.md`, `docs/releasing.md`, `docs/licensing-review.md`, `docs/public-api.md` | `docs` (extraction + remediation) | none | no attribution obligation known | License comparison is explanatory; the official Apache-2.0 text is now included separately in LICENSE. |
 | `docs/provenance.md` (this file) | `docs` (`newly-authored`) | none | — | Written in this checkout. |
 
 ## 5. Build / config
@@ -80,8 +80,8 @@ All files under `tests/` are class `tests`: synthetic verification material auth
 
 ## 7. Unresolved questions (human gates)
 
-1. Final open-source license selection (MIT vs Apache-2.0) is a pending human decision — no `LICENSE` file ships.
-2. Ownership/rights attestation for the `extracted/generalized` material is a pending human responsibility; this manifest records derivation, not proof.
+1. Apache-2.0 was selected under maintainer delegation on 2026-09-20; `LICENSE` contains the official text from https://www.apache.org/licenses/LICENSE-2.0.txt. The ownership/permission attestation is recorded below.
+2. On 2026-09-20, hanzam14 explicitly confirmed ownership of the inventoried JVC code/docs or permission to release them under Apache-2.0. This maintainer attestation is not independent proof of title or a legal opinion.
 3. Public repository URL, maintainer contact, and security reporting channel are pending release setup; no placeholders are claimed anywhere in this candidate.
 4. The commit author identity used for local history is recorded in the release report; no invented maintainer domain is used.
 5. No file above has a known third-party upstream requiring attribution; if review surfaces one, it will be listed here before publication.

@@ -7,12 +7,14 @@ name = "jvc"
 version = "0.1.0"
 description = "Local policy-controlled routing and execution layer for agent workflows across multiple projects"
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.10"
 authors = [
-    { name = "JVC Contributors" }
+    { name = "hanzam14" }
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: Apache Software License",
     "Intended Audience :: Developers",
     "Operating System :: Microsoft :: Windows",
     "Operating System :: POSIX",

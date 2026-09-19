@@ -2,7 +2,7 @@
 
 This document describes the build, verification, and release process for JVC.
 
-> NOTE: no `LICENSE` file is shipped yet. Final license selection (MIT vs Apache-2.0) remains a human decision after provenance review (see `docs/licensing-review.md` and `docs/provenance.md`).
+> Apache-2.0 is selected and `LICENSE` ships in both distributions. The maintainer's ownership/permission attestation was recorded on 2026-09-20. Publication requires the final commit, artifact hashes, verified security-reporting route, and external clean-machine evidence to be explicitly approved.
 
 ---
 
@@ -23,7 +23,7 @@ The build artifacts will be placed in `dist/`:
 
 ## 2. Explicit Inclusion Policy (`MANIFEST.in`)
 
-The wheel contains exactly the `jvc` package from `src/jvc/`. The sdist additionally ships user-facing material only:
+The wheel contains the `jvc` package from `src/jvc/` plus standard distribution metadata and the license text. The sdist additionally ships user-facing material only:
 
 - INCLUDE: top-level docs (`README`, `SECURITY`, `ARCHITECTURE`, …), `docs/`, `schemas/`, `examples/`.
 - EXCLUDE: `tests/`, `scripts/`, `.github/` (developer/verification material that lives in the git checkout and CI, not in the artifact), build residue, caches.
@@ -39,7 +39,7 @@ Before releasing any artifact:
      ```bash
      python -m zipfile -l dist/jvc-0.1.0-py3-none-any.whl
      ```
-   - Confirm only code under `src/jvc/` is included (no server module ships in 0.1.0).
+   - Confirm package code, standard distribution metadata, and license text are included (no server module ships in 0.1.0).
    - Confirm no test temporary files, caches, or `.continuity/` state exist.
 2. **Privacy Scan:**
    - Verify no machine-specific user-profile paths or private portfolio names are present in the archives.
@@ -49,5 +49,5 @@ Before releasing any artifact:
      python scripts/release_acceptance.py
      ```
    - The harness verifies `jvc --version`, `jvc --help`, `jvc demo`, and that the imported package resolves to the installed environment (never the source checkout).
-4. **External Clean-Machine Test (recommended release gate):**
-   - A true fresh-user/VM install test remains a human release step; it is tracked as recommended, not claimed by the local harness.
+4. **External Clean-Machine Test (required release gate for 0.1.0):**
+   - A true fresh-user/VM install test remains a human release step; it is required for this release and is not claimed by the local harness.
